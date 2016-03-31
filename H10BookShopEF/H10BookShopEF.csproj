@@ -77,6 +77,7 @@
     <Compile Include="Book.cs">
       <DependentUpon>BookshopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="BookShopLisäykset.cs" />
     <Compile Include="BookshopModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

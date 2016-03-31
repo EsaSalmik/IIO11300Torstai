@@ -16,9 +16,11 @@
                             Margin="5,5,5,0" Click="btnHaeAsiakkaat_Click" />
                     <Button Content="Hae kirjat EF" Height="28" HorizontalAlignment="Left" Name="btnHaeKirjat" 
                             Width="167"  Margin="5,5,5,0" Click="btnHaeKirjat_Click" />
-                    <ComboBox x:Name="cbCountries" ItemsSource="{Binding}" Height="26"  Margin="5,5,5,0" Visibility="Hidden" SelectionChanged="cbCountries_SelectionChanged"  />
+                    <ComboBox x:Name="cbCountries" 
+                              ItemsSource="{Binding}" Height="26"  Margin="5,5,5,0" 
+                              Visibility="Hidden" SelectionChanged="cbCountries_SelectionChanged"  />
                 </StackPanel>
-                <StackPanel Name="spBook" Background="LightCyan" MinWidth="200" Orientation="Horizontal">
+                <StackPanel Name="spBook" Background="Green" MinWidth="200" Orientation="Horizontal">
                     <StackPanel>
                         <TextBlock>Tuote</TextBlock>
                         <TextBlock>Nimi</TextBlock>
@@ -28,11 +30,11 @@
                     </StackPanel>
                     <StackPanel MinWidth="200" HorizontalAlignment="Left">
                         <!-- olion property ovat casesensitive-->
-                        <TextBlock Name="txtKirja" Text="{Binding Mode=Oneway}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1" Foreground="White"></TextBlock>
-                        <TextBox Name="txtNimi" Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1"></TextBox>
-                        <TextBox Name="txtKirjailija" Text="{Binding Path=Author, UpdateSourceTrigger=PropertyChanged}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1"></TextBox>
-                        <TextBox Name="txtMaa" Text="{Binding Path=Country}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1"></TextBox>
-                        <TextBox Name="txtVuosi" Text="{Binding Path=Year}" FontFamily="Tw Cen MT Condensed Extra Bold" MinWidth="40" MaxWidth="40" HorizontalAlignment="Left" Margin="1"></TextBox>
+                        <TextBlock Name="txtKirja" Text="{Binding Path=DisplayName, Mode=Oneway}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1" Foreground="White"></TextBlock>
+                        <TextBox Name="txtNimi" Text="{Binding Path=name, UpdateSourceTrigger=PropertyChanged}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1"></TextBox>
+                        <TextBox Name="txtKirjailija" Text="{Binding Path=author, UpdateSourceTrigger=PropertyChanged}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1"></TextBox>
+                        <TextBox Name="txtMaa" Text="{Binding Path=country}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1"></TextBox>
+                        <TextBox Name="txtVuosi" Text="{Binding Path=year}" FontFamily="Tw Cen MT Condensed Extra Bold" MinWidth="40" MaxWidth="40" HorizontalAlignment="Left" Margin="1"></TextBox>
                         <Button x:Name="btnTallenna" Content="Tallenna" Click="btnTallenna_Click"  />
                         <Button x:Name="btnUusi" Content="Uusi" Click="btnUusi_Click" />
                         <Button x:Name="btnPoista" Content="Poista" Click="btnPoista_Click" />
@@ -48,11 +50,11 @@
                     </StackPanel>
                     <StackPanel MinWidth="200" HorizontalAlignment="Left">
                         <!-- olion property ovat casesensitive-->
-                        <TextBlock Text="{Binding Mode=Oneway}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1" Foreground="White"></TextBlock>
+                        <TextBlock Text="{Binding Path=DisplayName, Mode=Oneway}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1" Foreground="White"></TextBlock>
                         <TextBox Text="{Binding Path=firstname, UpdateSourceTrigger=PropertyChanged}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1"></TextBox>
                         <TextBox Text="{Binding Path=lastname, UpdateSourceTrigger=PropertyChanged}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1"></TextBox>
-                        <TextBox Text="{Binding Path=OrderCount, UpdateSourceTrigger=PropertyChanged}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1" Width="20" HorizontalAlignment="Left"></TextBox>
-                        <Button x:Name="btnHaeTilaukset" Content="Hae asiakkaan tilaukset" />
+                        <TextBox Text="{Binding Path=OrderCount, Mode=OneWay}" FontFamily="Tw Cen MT Condensed Extra Bold" Margin="1" Width="20" HorizontalAlignment="Left"></TextBox>
+                        <Button x:Name="btnHaeTilaukset" Content="Hae asiakkaan tilaukset" Click="btnHaeTilaukset_Click" />
                     </StackPanel>
                 </StackPanel>
             </StackPanel>
